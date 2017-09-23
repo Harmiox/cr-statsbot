@@ -91,7 +91,8 @@ module.exports = {
   commas,
   addPlayerInfo,
   addUpcomingChests,
+  addUpcomingCycle,
   addSpecialChests,
   addPlayerDeck,
-  addClanInfo,
+  addClanInfo
 }
