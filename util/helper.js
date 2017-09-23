@@ -46,12 +46,15 @@ function addUpcomingChests(embed, data, client) {
 
 function addUpcomingCycle(embed, data, client) {
   let cycle = ''
-  for (let i = 0; i < 7; i++) {
+  embed.addField('Upcoming Chests','\u200b', true)
+  for (let i = 0; i < 240; i++) {
     const chest = data.items[i]
     if (chest.index === 1 || chest.index === 0) cycle += " | "
     cycle += client.logic.emojis.chests[chest.name] || client.logic.emojis.wifi
+    if (cycle.length() > 1000)
+      embed.addField('\u200b', cycle || 'Not Available', true)
   }
-  embed.addField('Upcoming Chests', cycle || 'Not Available', true)
+  embed.addField('\u200b', cycle || 'Not Available', true)
 }
 
 function addSpecialChests(embed, data, client){
