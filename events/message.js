@@ -31,9 +31,8 @@ module.exports = async (client, message) => {
   const args = message.content.slice(settings.prefix.length).trim().split(/ +/g)
   const command = args.shift().toLowerCase()
 
-  if (command !== 'reset') {
-    const channel = settings.allowedChannel || message.channel.id
-    if (channel !== message.channel.id) return
+  if (command !== 'reset' && settings.allowedChannels.length > 0) {
+    if (settings.allowedChannels.indexOf(message.channel.id) < 0) return
   }
 
   // Get the user or member's permission level from the elevation
