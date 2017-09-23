@@ -1,0 +1,22 @@
+{
+  "name": "statsbot",
+  "version": "1.0.0",
+  "description": "Clash Royale stats bot for Discord.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harmiox",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "discord.js": "^11.2.1",
+    "enmap": "^0.3.2",
+    "mongoose": "^4.11.12",
+    "path": "^0.12.7",
+    "request": "^2.82.0",
+    "request-promise": "^4.2.1",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.7.1"
+  }
+}
