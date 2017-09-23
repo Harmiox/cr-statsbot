@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-  const Discord = require('discord.js')
+  const DiscordServer = require('../db/discord-server-model')
   const embed = new Discord.RichEmbed()
   embed.setFooter('cr-statsbot', 'https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png')
 
