@@ -51,7 +51,7 @@ function addUpcomingCycle(embed, data, client) {
     const chest = data.items[i]
     if (chest.index === 1 || chest.index === 0) cycle += " | "
     cycle += client.logic.emojis.chests[chest.name] || client.logic.emojis.wifi
-    if (cycle.length() > 1000)
+    if (cycle.length() > 950)
       embed.addField('\u200b', cycle || 'Not Available', true)
   }
   embed.addField('\u200b', cycle || 'Not Available', true)
