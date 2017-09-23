@@ -47,7 +47,8 @@ function addUpcomingChests(embed, data, client) {
 function addUpcomingCycle(embed, data, client) {
   let cycle = ''
   embed.addField('Upcoming Chests','\u200b', true)
-  for (let i = 0; i < 240; i++) {
+  client.logger.debug(`Upcoming Chests (${data.items.length})`)
+  for (let i = 0; i < data.items.length; i++) {
     const chest = data.items[i]
     if (chest.index === 1 || chest.index === 0) cycle += " | "
     cycle += client.logic.emojis.chests[chest.name] || client.logic.emojis.wifi
