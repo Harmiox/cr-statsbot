@@ -38,8 +38,8 @@ exports.conf = {
 }
 
 exports.help = {
-  name: "chests",
+  name: "cycle",
   category: "Clash Royale",
-  description: "Upcoming chests for a Clash Royale player.",
-  usage: "chests [tag]"
+  description: "Upcoming cycle for a Clash Royale player.",
+  usage: "cycle [tag]"
 }
