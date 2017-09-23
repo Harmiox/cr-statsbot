@@ -44,6 +44,16 @@ function addUpcomingChests(embed, data, client) {
   embed.addField('Upcoming Chests', cycle || 'Not Available', true)
 }
 
+function addUpcomingCycle(embed, data, client) {
+  let cycle = ''
+  for (let i = 0; i < 7; i++) {
+    const chest = data.items[i]
+    if (chest.index === 1 || chest.index === 0) cycle += " | "
+    cycle += client.logic.emojis.chests[chest.name] || client.logic.emojis.wifi
+  }
+  embed.addField('Upcoming Chests', cycle || 'Not Available', true)
+}
+
 function addSpecialChests(embed, data, client){
   let until = ''
   const chests = ['Giant Chest', 'Magical Chest', 'Epic Chest', 'Legendary Chest', 'Super Magical Chest']
