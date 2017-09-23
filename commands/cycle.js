@@ -20,8 +20,7 @@ exports.run = async (client, message, args) => {
     json: true,
   }).then(profile => {
     embed.setAuthor(tag)
-    client.helper.addUpcomingChests(embed, profile, client)
-    client.helper.addSpecialChests(embed, profile, client)
+    client.helper.addUpcomingCycle(embed, profile, client)
     embed.setColor(client.config.colors.default)
     message.channel.send(`Here you go ${message.author}!`, {embed})
   }).catch(response => {
