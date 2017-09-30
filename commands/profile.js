@@ -1,7 +1,7 @@
 exports.run = async (client, message, args) => {
   const Discord = require('discord.js')
   const embed = new Discord.RichEmbed()
-  embed.setDescription('*You can now save your tag with `!save TAG`*')
+  embed.setDescription('[Click Here](https://www.youtube.com/watch?v=8Pd29z0r7SE) to watch the official Touchdown Tournament live!')
   embed.setFooter('cr-statsbot', 'https://pbs.twimg.com/profile_images/616309728688238592/pBeeJQDQ.png')
 
   //Check if the tag is valid
