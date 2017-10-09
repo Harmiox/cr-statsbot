@@ -9,7 +9,7 @@ try {
 
 exports.run = async (client, message, args, level) => {// eslint-disable-line no-unused-vars
   await message.reply(`Bot is shutting down. ${hasPM2}`)
-  process.exit(1)
+  client.shard.broadcastEval('process.exit(1)')
 }
 
 exports.conf = {

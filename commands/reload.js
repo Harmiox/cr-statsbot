@@ -10,17 +10,18 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
   if (!command) return message.reply(`The command \`${args[0]}\` doesn"t seem to exist, nor is it an alias. Try again!`);
   command = command.help.name;
 
-  delete require.cache[require.resolve(`./${command}.js`)];
-  const cmd = require(`./${command}`);
-  client.commands.delete(command);
-  client.aliases.forEach((cmd, alias) => {
-    if (cmd === command) client.aliases.delete(alias);
-  });
-  client.commands.set(command, cmd);
-  cmd.conf.aliases.forEach(alias => {
-    client.aliases.set(alias, cmd.help.name);
-  });
-
+  client.shard.broadcastEval(`
+    delete require.cache[require.resolve(`./${command}.js`)];
+    const cmd = require(`./${command}`);
+    client.commands.delete(command);
+    client.aliases.forEach((cmd, alias) => {
+      if (cmd === command) client.aliases.delete(alias);
+    });
+    client.commands.set(command, cmd);
+    cmd.conf.aliases.forEach(alias => {
+      client.aliases.set(alias, cmd.help.name);
+    })`)
+    
   message.reply(`The command \`${command}\` has been reloaded`);
 };
 
