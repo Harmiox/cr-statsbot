@@ -1,14 +1,5 @@
-let hasPM2
-
-try {
-  require.resolve("pm2")
-  hasPM2 = "PM2 is installed, hopefully that means this bot will reboot in a moment!"
-} catch (e) {
-  hasPM2 = "Cannot find PM2. You must restart this bot manually from the command prompt."
-}
-
 exports.run = async (client, message, args, level) => {// eslint-disable-line no-unused-vars
-  await message.reply(`Bot is shutting down. ${hasPM2}`)
+  await message.reply(`Bot is shutting down. If you do not have PM2 installed & setup you'll have to manually start the bot back up.`)
   client.shard.broadcastEval('process.exit(1)')
 }
 
