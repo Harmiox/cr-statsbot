@@ -10,11 +10,11 @@ exports.run = (client, message, args, level) => {
     let currentCategory = ""
     // Create output string
     let output = `= Command List =\n\n[Use ${message.settings.prefix}help <commandname> for details]\n`
-    // TODO: This doesn't seem to work. Need to create an issue on the Enmap github repo.
-    /*const sorted = myCommands.sort((p, c) => p.help.category > c.help.category ? 1
-      :  p.help.name > c.help.name && p.help.category === c.help.category
-      ? 1 : -1 )*/
-    myCommands.forEach( c => {
+    // The sorted thing should be working fine now
+    const sorted = myCommands.array().sort((p, c) => p.help.category > c.help.category ? 1 
+    :  p.help.name > c.help.name && p.help.category === c.help.category 
+    ? 1 : -1 );
+    sorted.forEach( c => {
       const cat = c.help.category.toProperCase()
       if (currentCategory !== cat) {
         output += `\n== ${cat} ==\n`
