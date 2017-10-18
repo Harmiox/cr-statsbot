@@ -65,7 +65,7 @@ function addSpecialChests(embed, data, client){
     const chest = data.items[i]
     if (chests.indexOf(chest.name) >= 0) until += `${client.logic.emojis.chests[chest.name]}${chest.index} `
   }
-  embed.addField('Chests Until', until || 'Not Available', true);
+  embed.addField('Chests Until', until || 'Not Available', false);
 }
 
 function addPlayerDeck(embed, data, client) {
